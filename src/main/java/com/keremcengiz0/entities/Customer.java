@@ -14,6 +14,7 @@ public class Customer {
     private LocalDate registrationDate;
     private List<Invoice> invoices;
 
+    // Invoice... invoices means to take the invoices as a string array and add them as a list in the constructor.
     public Customer(int id, LocalDate registrationDate, Invoice... invoices) {
         this.id = id;
         this.registrationDate = registrationDate;

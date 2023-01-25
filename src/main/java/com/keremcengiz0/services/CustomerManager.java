@@ -119,7 +119,7 @@ public class CustomerManager {
         System.out.println("Total amount of invoices for customers who signed up in June: " + totalPrice + " ₺");
     }
 
-
+    // This method lists all invoices.
     public void getAllInvoices() {
 
         for (IndividualCustomer individualCustomer : individualCustomers) {
@@ -145,9 +145,9 @@ public class CustomerManager {
         }
     }
 
-    // This method lists all customers contains 'C'
+    // This method lists customers' invoices over 1500 ₺.
     public void getAllCustomersInvoicesOver1500() {
-        System.out.println("---------- Individual customers with invoice amount over 1500 TL ----------");
+        System.out.println("---------- Individual customers with invoice amount over 1500 ₺ ----------");
 
         for(IndividualCustomer individualCustomer : individualCustomers) {
             List<Invoice> invoices = individualCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
@@ -163,7 +163,7 @@ public class CustomerManager {
             }
         }
 
-        System.out.println("---------- Corporate customers with invoice amount over 1500 TL ----------");
+        System.out.println("---------- Corporate customers with invoice amount over 1500 ₺ ----------");
 
         for(CorporateCustomer corporateCustomer : corporateCustomers) {
             List<Invoice> invoices = corporateCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
@@ -179,6 +179,76 @@ public class CustomerManager {
             }
         }
     }
+
+    // This method lists the average of customers invoices over 1500 ₺.
+    public void getAllAveragesOfCustomersInvoicesOver1500() {
+        List<Double> numbers = new ArrayList<>();
+        double totalPrice = 0.0;
+
+        for(IndividualCustomer individualCustomer : individualCustomers) {
+            List<Invoice> invoices = individualCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
+            for(Invoice invoice : invoices) {
+                numbers.add(invoice.getPrice());
+            }
+        }
+
+        for(CorporateCustomer corporateCustomer : corporateCustomers) {
+            List<Invoice> invoices = corporateCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
+            for(Invoice invoice : invoices) {
+                numbers.add(invoice.getPrice());
+            }
+        }
+
+        for(double number : numbers) {
+            totalPrice += number;
+        }
+
+        System.out.println("Average of customers invoices over 1500 ₺: " + totalPrice / numbers.size());
+    }
+
+    // This method lists the name and billing information of customers with invoices under 500 ₺.
+    public void getAllNameOfCustomersWithInvoicesUnder500() {
+
+        for(IndividualCustomer individualCustomer : individualCustomers) {
+            List<Invoice> invoices = individualCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() < 500).collect(Collectors.toList());
+            if(invoices.size() > 0) {
+                System.out.println("Name of customers with invoices under 500 ₺ : " + individualCustomer.getFirstName() + " --> " +
+                        " Invoices{ " +
+                            invoices
+                                .stream().map(invoice ->
+                                            "Invoice Id: " + invoice.getId() +
+                                                ", Price: " + invoice.getPrice() + " ₺").collect(Collectors.toList()) + "}");
+            }
+        }
+
+    }
+
+    // This method lists the sector information of companies whose average invoices for the month of June are below 750 ₺.
+    public void getAllCorporateCustomersWithAnAverageOfUnder750InJune() {
+        List<CorporateCustomer> corporateCustomerList = new ArrayList<>();
+
+        for (CorporateCustomer customer : corporateCustomers) {
+            double JuneInvoiceTotal = 0;
+            int JuneInvoiceCount = 0;
+            for (Invoice invoice : customer.getInvoices()) {
+                if (invoice.getInvoiceDate().getMonth() == Month.JUNE) {
+                    JuneInvoiceTotal += invoice.getPrice();
+                    JuneInvoiceCount++;
+                }
+            }
+            if (JuneInvoiceCount > 0 && (JuneInvoiceTotal / JuneInvoiceCount) < 750) {
+                corporateCustomerList.add(customer);
+            }
+
+        }
+
+        System.out.println("---------- Sector information of companies with an invoice average of less than 750 ₺ in June ----------");
+
+        for(CorporateCustomer corporateCustomer : corporateCustomerList) {
+            System.out.println(corporateCustomer.getName() + " :" + corporateCustomer.getSector());
+        }
+    }
+
 
 
 

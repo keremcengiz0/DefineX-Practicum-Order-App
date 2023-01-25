@@ -19,7 +19,7 @@ public class Main {
 
         Customer CI1 = new IndividualCustomer(1, LocalDate.of(2023, Month.JANUARY,10),"Kerem","Cengiz",
                 new Invoice(1,1499.99,LocalDate.of(2023,Month.FEBRUARY,18)),
-                new Invoice(2,875.50,LocalDate.of(2023,Month.JUNE,25)));
+                new Invoice(2,375.50,LocalDate.of(2023,Month.JUNE,25)));
 
         customerManager.addIndividualCustomer((IndividualCustomer) CI1);
 
@@ -32,7 +32,7 @@ public class Main {
 
         Customer CI3 = new IndividualCustomer(3, LocalDate.of(2019, Month.JUNE,1),"Hilal","Cengiz",
                 new Invoice(5,4499.99,LocalDate.of(2023,Month.DECEMBER,9)),
-                new Invoice(6,3350.85,LocalDate.of(2020,Month.AUGUST,31)));
+                new Invoice(6,350.85,LocalDate.of(2020,Month.AUGUST,31)));
 
         customerManager.addIndividualCustomer((IndividualCustomer) CI3);
 
@@ -40,8 +40,8 @@ public class Main {
         // 3 Corporate customer object is created and added to the list.
 
         Customer CO4 = new CorporateCustomer(4, LocalDate.of(2010, Month.JANUARY,1),"Anadolu Ağız Ve Diş Sağlığı","Sağlık",
-                new Invoice(7,50000.00,LocalDate.of(2021,Month.MARCH,17)),
-                new Invoice(8,185575.00,LocalDate.of(2023,Month.JUNE,8)));
+                new Invoice(7,400.00,LocalDate.of(2021,Month.JUNE,17)),
+                new Invoice(8,500.00,LocalDate.of(2023,Month.JUNE,8)));
 
         customerManager.addCorporateCustomer((CorporateCustomer) CO4);
 
@@ -53,7 +53,7 @@ public class Main {
 
 
         Customer CO6 = new CorporateCustomer(6, LocalDate.of(2019, Month.JANUARY,1),"DefineX","Danışmanlık, Tejnoloji ",
-                new Invoice(11,980000.00,LocalDate.of(2020,Month.JUNE,1)),
+                new Invoice(11,400.00,LocalDate.of(2020,Month.JUNE,1)),
                 new Invoice(12,1200000.00,LocalDate.of(2021,Month.DECEMBER,28)));
 
         customerManager.addCorporateCustomer((CorporateCustomer) CO6);
@@ -63,7 +63,10 @@ public class Main {
         //customerManager.getAllCustomersContainsC();
         //customerManager.getAllCustomersInvoicesTotalWhoSignedUpInJune();
         //customerManager.getAllInvoices();
-        customerManager.getAllCustomersInvoicesOver1500();
+        //customerManager.getAllCustomersInvoicesOver1500();
+        //customerManager.getAllAveragesOfCustomersInvoicesOver1500();
+        //customerManager.getAllNameOfCustomersWithInvoicesUnder500();
+        //customerManager.getAllCorporateCustomersWithAnAverageOfUnder750InJune();
 
     }
 }
