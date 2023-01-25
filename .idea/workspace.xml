@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Order-App:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85e8bd04-0a88-4a5b-8db9-729ff58c9f05" name="Changes" comment="added new methods.">
+    <list default="true" id="85e8bd04-0a88-4a5b-8db9-729ff58c9f05" name="Changes" comment="added code improvements and methods img.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/services/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/services/CustomerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +43,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RunManager">
@@ -92,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674675639224</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added code improvements and methods img.">
+      <created>1674676454503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674676454503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added customer objects." />
     <MESSAGE value="added new methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="added new methods." />
+    <MESSAGE value="added code improvements and methods img." />
+    <option name="LAST_COMMIT_MESSAGE" value="added code improvements and methods img." />
   </component>
 </project>
