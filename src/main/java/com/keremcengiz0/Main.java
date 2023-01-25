@@ -59,14 +59,14 @@ public class Main {
         customerManager.addCorporateCustomer((CorporateCustomer) CO6);
 
 
-        //customerManager.getAllCustomers();
-        //customerManager.getAllCustomersContainsC();
-        //customerManager.getAllCustomersInvoicesTotalWhoSignedUpInJune();
-        //customerManager.getAllInvoices();
-        //customerManager.getAllCustomersInvoicesOver1500();
-        //customerManager.getAllAveragesOfCustomersInvoicesOver1500();
-        //customerManager.getAllNameOfCustomersWithInvoicesUnder500();
-        //customerManager.getAllCorporateCustomersWithAnAverageOfUnder750InJune();
+        customerManager.getAllCustomers();
+        customerManager.getAllCustomersContainsC();
+        customerManager.getAllCustomersInvoicesTotalWhoSignedUpInJune();
+        customerManager.getAllInvoices();
+        customerManager.getAllCustomersInvoicesOver1500();
+        customerManager.getAllAveragesOfCustomersInvoicesOver1500();
+        customerManager.getAllNameOfCustomersWithInvoicesUnder500();
+        customerManager.getAllCorporateCustomersWithAnAverageOfUnder750InJune();
 
     }
 }

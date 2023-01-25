@@ -7,7 +7,6 @@
     <list default="true" id="85e8bd04-0a88-4a5b-8db9-729ff58c9f05" name="Changes" comment="added new methods.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/entities/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/services/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keremcengiz0/services/CustomerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674658935516</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added new methods.">
+      <created>1674675639224</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674675639224</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

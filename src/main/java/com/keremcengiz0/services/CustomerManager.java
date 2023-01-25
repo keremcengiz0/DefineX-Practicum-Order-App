@@ -75,10 +75,12 @@ public class CustomerManager {
                             "}"
             );
         }
+        System.out.println();
     }
 
     // This method lists all customers contains 'C'
     public void getAllCustomersContainsC() {
+        System.out.println("---------- Customer info containing the letter 'C' ----------");
         for(IndividualCustomer individualCustomer : individualCustomers) {
             if(individualCustomer.getFirstName().toUpperCase().contains("C")) {
                 System.out.println(
@@ -92,6 +94,7 @@ public class CustomerManager {
                 );
             }
         }
+        System.out.println();
     }
 
     // This method calculate the total price of invoices for customers who signed up in June.
@@ -117,11 +120,12 @@ public class CustomerManager {
         }
 
         System.out.println("Total amount of invoices for customers who signed up in June: " + totalPrice + " ₺");
+        System.out.println();
     }
 
     // This method lists all invoices.
     public void getAllInvoices() {
-
+        System.out.println("---------- All Invoices List ----------");
         for (IndividualCustomer individualCustomer : individualCustomers) {
             System.out.println(
                             " Invoices{ " + individualCustomer.getInvoices()
@@ -143,6 +147,7 @@ public class CustomerManager {
                             "}"
             );
         }
+        System.out.println();
     }
 
     // This method lists customers' invoices over 1500 ₺.
@@ -178,6 +183,7 @@ public class CustomerManager {
                 );
             }
         }
+        System.out.println();
     }
 
     // This method lists the average of customers invoices over 1500 ₺.
@@ -204,6 +210,7 @@ public class CustomerManager {
         }
 
         System.out.println("Average of customers invoices over 1500 ₺: " + totalPrice / numbers.size());
+        System.out.println();
     }
 
     // This method lists the name and billing information of customers with invoices under 500 ₺.
@@ -220,7 +227,7 @@ public class CustomerManager {
                                                 ", Price: " + invoice.getPrice() + " ₺").collect(Collectors.toList()) + "}");
             }
         }
-
+        System.out.println();
     }
 
     // This method lists the sector information of companies whose average invoices for the month of June are below 750 ₺.
@@ -247,9 +254,7 @@ public class CustomerManager {
         for(CorporateCustomer corporateCustomer : corporateCustomerList) {
             System.out.println(corporateCustomer.getName() + " :" + corporateCustomer.getSector());
         }
+        System.out.println();
     }
-
-
-
 
 }
