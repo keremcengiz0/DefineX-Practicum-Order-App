@@ -23,15 +23,15 @@ public class Main {
 
         customerManager.addIndividualCustomer((IndividualCustomer) CI1);
 
-        Customer CI2 = new IndividualCustomer(2, LocalDate.of(2021, Month.FEBRUARY,15),"Ceren","Yılmaz",
-                new Invoice(3,2855.46,LocalDate.of(2023,Month.JUNE,20)),
+        Customer CI2 = new IndividualCustomer(2, LocalDate.of(2021, Month.JUNE,15),"Ceren","Yılmaz",
+                new Invoice(3,2855.46,LocalDate.of(2023,Month.FEBRUARY,20)),
                 new Invoice(4,448.25,LocalDate.of(2022,Month.JULY,25)));
 
         customerManager.addIndividualCustomer((IndividualCustomer) CI2);
 
 
-        Customer CI3 = new IndividualCustomer(3, LocalDate.of(2019, Month.JANUARY,1),"Hilal","Cengiz",
-                new Invoice(5,4499.99,LocalDate.of(2023,Month.JUNE,9)),
+        Customer CI3 = new IndividualCustomer(3, LocalDate.of(2019, Month.JUNE,1),"Hilal","Cengiz",
+                new Invoice(5,4499.99,LocalDate.of(2023,Month.DECEMBER,9)),
                 new Invoice(6,3350.85,LocalDate.of(2020,Month.AUGUST,31)));
 
         customerManager.addIndividualCustomer((IndividualCustomer) CI3);
@@ -46,9 +46,9 @@ public class Main {
         customerManager.addCorporateCustomer((CorporateCustomer) CO4);
 
 
-        Customer CO5 = new CorporateCustomer(5, LocalDate.of(2007, Month.JANUARY,1),"Patika","Eğitim",
+        Customer CO5 = new CorporateCustomer(5, LocalDate.of(2007, Month.JUNE,1),"Patika","Eğitim",
                 new Invoice(9,85000.00,LocalDate.of(2013,Month.MAY,21)),
-                new Invoice(10,120000.00,LocalDate.of(2018,Month.JUNE,11)));
+                new Invoice(10,120000.00,LocalDate.of(2018,Month.APRIL,11)));
         customerManager.addCorporateCustomer((CorporateCustomer) CO5);
 
 
@@ -61,6 +61,9 @@ public class Main {
 
         //customerManager.getAllCustomers();
         //customerManager.getAllCustomersContainsC();
+        //customerManager.getAllCustomersInvoicesTotalWhoSignedUpInJune();
+        //customerManager.getAllInvoices();
+        customerManager.getAllCustomersInvoicesOver1500();
 
     }
 }

@@ -2,7 +2,12 @@ package com.keremcengiz0.services;
 
 import com.keremcengiz0.entities.CorporateCustomer;
 import com.keremcengiz0.entities.IndividualCustomer;
+import com.keremcengiz0.entities.Invoice;
+
+import java.time.Month;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -51,8 +56,8 @@ public class CustomerManager {
                     individualCustomer.toString() +
                             " Invoices{ " + individualCustomer.getInvoices()
                             .stream().map(invoice ->
-                                    "Invoices Id: " + invoice.getId() +
-                                    ", Price: " + invoice.getPrice() +
+                                    "Invoice Id: " + invoice.getId() +
+                                    ", Price: " + invoice.getPrice() + " ₺" +
                                     ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
                             "}"
                     );
@@ -64,8 +69,8 @@ public class CustomerManager {
                     corporateCustomer.toString() +
                             " Invoices{ " + corporateCustomer.getInvoices()
                             .stream().map(invoice ->
-                                    "Invoices Id: " + invoice.getId() +
-                                            ", Price: " + invoice.getPrice() +
+                                    "Invoice Id: " + invoice.getId() +
+                                            ", Price: " + invoice.getPrice() + " ₺" +
                                             ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
                             "}"
             );
@@ -80,8 +85,8 @@ public class CustomerManager {
                         individualCustomer.toString() +
                                 " Invoices{ " + individualCustomer.getInvoices()
                                 .stream().map(invoice ->
-                                        "Invoices Id: " + invoice.getId() +
-                                                ", Price: " + invoice.getPrice() +
+                                        "Invoice Id: " + invoice.getId() +
+                                                ", Price: " + invoice.getPrice() + " ₺" +
                                                 ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
                                 "}"
                 );
@@ -89,6 +94,91 @@ public class CustomerManager {
         }
     }
 
+    // This method calculate the total price of invoices for customers who signed up in June.
+    public void getAllCustomersInvoicesTotalWhoSignedUpInJune() {
+        double totalPrice = 0.0;
+
+        for (IndividualCustomer individualCustomer : individualCustomers) {
+            if(individualCustomer.getRegistrationDate().getMonth() == Month.JUNE) {
+                List<Invoice> invoices = individualCustomer.getInvoices().stream().collect(Collectors.toList());
+                for (Invoice invoice : invoices) {
+                    totalPrice += invoice.getPrice();
+                }
+            }
+        }
+
+        for (CorporateCustomer corporateCustomer : corporateCustomers) {
+            if(corporateCustomer.getRegistrationDate().getMonth() == Month.JUNE) {
+                List<Invoice> invoices = corporateCustomer.getInvoices().stream().collect(Collectors.toList());
+                for (Invoice invoice : invoices) {
+                    totalPrice += invoice.getPrice();
+                }
+            }
+        }
+
+        System.out.println("Total amount of invoices for customers who signed up in June: " + totalPrice + " ₺");
+    }
+
+
+    public void getAllInvoices() {
+
+        for (IndividualCustomer individualCustomer : individualCustomers) {
+            System.out.println(
+                            " Invoices{ " + individualCustomer.getInvoices()
+                            .stream().map(invoice ->
+                                    "Invoice Id: " + invoice.getId() +
+                                            ", Price: " + invoice.getPrice() + " ₺" +
+                                            ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
+                            "}"
+            );
+        }
+
+        for (CorporateCustomer corporateCustomer : corporateCustomers) {
+            System.out.println(
+                            " Invoices{ " + corporateCustomer.getInvoices()
+                            .stream().map(invoice ->
+                                    "Invoice Id: " + invoice.getId() +
+                                            ", Price: " + invoice.getPrice() +
+                                            ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
+                            "}"
+            );
+        }
+    }
+
+    // This method lists all customers contains 'C'
+    public void getAllCustomersInvoicesOver1500() {
+        System.out.println("---------- Individual customers with invoice amount over 1500 TL ----------");
+
+        for(IndividualCustomer individualCustomer : individualCustomers) {
+            List<Invoice> invoices = individualCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
+            if(invoices.size() > 0) {
+                System.out.println(
+                                " Invoices{ " + invoices
+                                .stream().map(invoice ->
+                                        "Invoice Id: " + invoice.getId() +
+                                                ", Price: " + invoice.getPrice() + " ₺" +
+                                                ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
+                                "}"
+                );
+            }
+        }
+
+        System.out.println("---------- Corporate customers with invoice amount over 1500 TL ----------");
+
+        for(CorporateCustomer corporateCustomer : corporateCustomers) {
+            List<Invoice> invoices = corporateCustomer.getInvoices().stream().filter(invoice -> invoice.getPrice() > 1500).collect(Collectors.toList());
+            if(invoices.size() > 0) {
+                System.out.println(
+                        " Invoices{ " + invoices
+                                .stream().map(invoice ->
+                                        "Invoice Id: " + invoice.getId() +
+                                                ", Price: " + invoice.getPrice() + " ₺" +
+                                                ", Invoice Date: " + invoice.getInvoiceDate()).collect(Collectors.toList()) +
+                                "}"
+                );
+            }
+        }
+    }
 
 
 
