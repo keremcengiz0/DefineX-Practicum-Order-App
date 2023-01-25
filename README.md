@@ -14,6 +14,10 @@ The average of invoices over 1500₺ in the system is calculated.
 The names of customers with invoices under 500₺ in the system are listed.
 The companies whose average invoices for the month of June are below 750₺ are listed in which sector they are in.
 
+## How to run the project ##
+If you want to run the project, go to out/artifacts/Order_App_Jar folder and download the jar file. Then run the project using the following command in terminal: java -jar out/artifacts/Order_App_jar/Order-App.jar
+
+
 ## Images from the Project ##
 ----------------------------------------------------------------
 ### AllMethod ###
